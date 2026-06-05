@@ -1,0 +1,89 @@
+---
+import Shell from '../layouts/Shell.astro';
+---
+
+<Shell title="About — Jonas C. Morgner" current="about" intro>
+  <p class="eyebrow about-eyebrow">About</p>
+
+  <h1 class="h1">
+    I make paintings about tension &mdash; between weight and air, structure and rupture.
+  </h1>
+
+  <div class="prose">
+    <p>
+      Jonas C. Morgner (b. 1991) is a contemporary painter working primarily in
+      acrylic on canvas. His practice moves between gestural abstraction and
+      reduced color fields, treating each surface as a record of decisions made
+      and undone.
+    </p>
+    <p>
+      Working from his studio, Morgner builds compositions in layers, allowing
+      earlier marks to resurface and interrupt the final image. The result is a
+      body of work that feels both deliberate and unfinished &mdash; held in the
+      moment just before resolution.
+    </p>
+    <p>
+      His work has been shown in independent spaces and private collections.
+      Recent series explore ochre and charcoal, monochrome rupture, and
+      interlocking geometric form.
+    </p>
+  </div>
+
+  <hr class="rule" />
+
+  <dl class="meta">
+    <div class="meta__cell">
+      <dt>Studio</dt>
+      <dd>Berlin, GER</dd>
+    </div>
+    <div class="meta__cell">
+      <dt>Active since</dt>
+      <dd>2025</dd>
+    </div>
+  </dl>
+</Shell>
+
+<style>
+  .about-eyebrow {
+    margin-bottom: var(--s-6);
+  }
+
+  .h1 {
+    max-width: 640px;
+    margin-bottom: var(--s-4);
+  }
+
+  .prose {
+    max-width: var(--content-max);
+  }
+
+  .meta {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--s-3) var(--s-6);
+    max-width: var(--content-max);
+    margin: 0;
+  }
+  .meta__cell {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+  .meta dt {
+    font-size: var(--fs-eyebrow);
+    color: var(--ink-muted);
+    font-weight: 400;
+  }
+  .meta dd {
+    margin: 0;
+    font-size: var(--fs-nav);
+    font-weight: 500;
+    color: var(--ink);
+  }
+
+  @media (max-width: 540px) {
+    .meta {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

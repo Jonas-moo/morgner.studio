@@ -1,0 +1,95 @@
+@import '@fontsource-variable/jetbrains-mono/index.css';
+@import './tokens.css';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--bg);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  font-weight: 400;
+  font-feature-settings: 'liga' 0, 'calt' 0;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  text-decoration-thickness: 1px;
+  transition: opacity 120ms ease;
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+a.is-clean {
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+::selection {
+  background: var(--ink);
+  color: var(--bg);
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+  font-weight: 400;
+}
+
+p + p {
+  margin-top: var(--s-2);
+}
+
+.eyebrow {
+  font-size: var(--fs-eyebrow);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink);
+}
+
+.h1 {
+  font-size: var(--fs-h1);
+  font-weight: 500;
+  line-height: var(--lh-h1);
+  letter-spacing: -0.005em;
+}
+
+hr.rule {
+  border: 0;
+  border-top: 1px solid var(--rail-divider);
+  margin: var(--s-4) 0;
+}

@@ -1,0 +1,170 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import Shell from '../../layouts/Shell.astro';
+
+export async function getStaticPaths() {
+  const artworks = await getCollection('artworks');
+  return artworks.map((artwork) => ({
+    params: { slug: artwork.slug },
+    props: { artwork },
+  }));
+}
+
+interface Props {
+  artwork: CollectionEntry<'artworks'>;
+}
+
+const { artwork } = Astro.props;
+const {
+  title,
+  year,
+  medium,
+  dimensions,
+  image,
+  forSale,
+  sold,
+  price,
+  currency,
+  stripePaymentLink,
+} = artwork.data;
+const { Content } = await artwork.render();
+
+const priceLabel =
+  price !== undefined
+    ? new Intl.NumberFormat('en-DE', {
+        style: 'currency',
+        currency,
+        maximumFractionDigits: 0,
+      }).format(price)
+    : null;
+---
+
+<Shell title={`${title} — Jonas C. Morgner`} current="gallery">
+  <p class="back"><a href="/">&larr; BACK</a></p>
+
+  <article class="work">
+    <div class="work__image">
+      <img src={image} alt={title} />
+    </div>
+
+    <aside class="work__meta">
+      <h1 class="work__title">
+        <span class="work__title-mark">{title}</span>
+        {sold && <span class="sold-dot" role="img" aria-label="Sold" />}
+      </h1>
+      <p class="work__line">{year} &mdash; {medium}</p>
+      <p class="work__line">{dimensions}</p>
+
+      {
+        forSale && stripePaymentLink && (
+          <a class="buy" href={stripePaymentLink} rel="noopener">
+            Buy{priceLabel ? ` — ${priceLabel}` : ''}
+          </a>
+        )
+      }
+
+      <div class="work__notes">
+        <Content />
+      </div>
+    </aside>
+  </article>
+</Shell>
+
+<style>
+  .back {
+    font-size: var(--fs-eyebrow);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-top: 0.55rem;
+    margin-bottom: 2.2rem;
+  }
+  .back a {
+    text-decoration: none;
+  }
+  .back a:hover {
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+  }
+
+  .work {
+    display: grid;
+    grid-template-columns: minmax(320px, 1fr) minmax(220px, 320px);
+    gap: var(--s-6);
+    align-items: start;
+    max-width: var(--gallery-max);
+  }
+
+  .work__image {
+    display: inline-block;
+    max-width: 100%;
+    line-height: 0;
+  }
+  .work__image img {
+    display: block;
+    max-width: 100%;
+    max-height: 80vh;
+    width: auto;
+    height: auto;
+  }
+
+  .work__title {
+    font-size: var(--fs-artwork-title);
+    font-weight: 500;
+    line-height: 1.25;
+    margin-bottom: var(--s-2);
+  }
+
+  .work__title-mark {
+    background: var(--ink);
+    color: var(--bg);
+    padding: 0.15em 0.45em;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+  }
+
+  .work__line {
+    color: var(--ink-muted);
+    margin: 0;
+  }
+  .work__line + .work__line {
+    margin-top: 0.25rem;
+  }
+
+  .work__notes {
+    margin-top: var(--s-4);
+    padding-top: var(--s-3);
+    border-top: 1px solid var(--rail-divider);
+    color: var(--ink);
+  }
+
+  .buy {
+    display: inline-block;
+    margin-top: var(--s-3);
+    padding: 0.65rem 1rem;
+    background: var(--ink);
+    color: var(--bg);
+    text-decoration: none;
+    font-size: var(--fs-nav);
+    letter-spacing: 0.02em;
+  }
+  .buy:hover {
+    opacity: 0.85;
+  }
+
+  @media (max-width: 900px) {
+    .work {
+      grid-template-columns: 1fr;
+      gap: var(--s-4);
+    }
+  }
+
+  .sold-dot {
+    display: inline-block;
+    width: 0.35rem;
+    height: 0.35rem;
+    margin-left: 0.5rem;
+    border-radius: 50%;
+    background: #c0392b;
+    vertical-align: middle;
+  }
+</style>

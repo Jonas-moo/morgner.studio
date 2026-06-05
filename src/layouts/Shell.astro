@@ -1,0 +1,206 @@
+---
+import '../styles/global.css';
+import Wordmark from '../components/Wordmark.astro';
+import Nav from '../components/Nav.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+  current?: 'about' | 'gallery' | 'contact';
+  intro?: boolean;
+}
+
+const {
+  title = 'Jonas C. Morgner',
+  description = 'Paintings on tension \u2014 weight and air, structure and rupture. Berlin.',
+  current,
+  intro = false,
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#f4f1ec" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+  </head>
+  <body>
+    {
+      intro && (
+        <div class="intro" id="intro" aria-hidden="true">
+          <img src="/intro/00.png" alt="" class="intro__img is-active" />
+          <img src="/intro/0.png" alt="" class="intro__img" />
+          <img src="/intro/1.png" alt="" class="intro__img" />
+          <img src="/intro/2.png" alt="" class="intro__img" />
+          <img src="/intro/mid.png" alt="" class="intro__img" />
+          <img src="/intro/3.png" alt="" class="intro__img" />
+          <img src="/intro/4.png" alt="" class="intro__img" />
+          <img src="/intro/5.png" alt="" class="intro__img" />
+          <img src="/intro/6.png" alt="" class="intro__img" />
+          <img src="/intro/final.png" alt="" class="intro__final" />
+        </div>
+      )
+    }
+
+    <div class="shell">
+      <aside class="rail" aria-label="Site identity">
+        <div class="rail__mark">
+          <Wordmark />
+        </div>
+        <p class="rail__caption">Berlin</p>
+      </aside>
+
+      <main class="content" id="main">
+        <header class="content__head">
+          <Nav current={current} />
+        </header>
+        <div class="content__body">
+          <slot />
+        </div>
+      </main>
+    </div>
+
+    <style>
+      .shell {
+        min-height: 100vh;
+        display: grid;
+        grid-template-columns: var(--rail-w) 1fr;
+      }
+
+      .rail {
+        position: sticky;
+        top: 0;
+        align-self: start;
+        height: 100vh;
+        border-right: 1px solid var(--rail-divider);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        padding: clamp(2.5rem, 6vw, 5rem) 0 clamp(2rem, 4vw, 3rem);
+      }
+
+      .rail__mark {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .rail__caption {
+        margin: 0;
+        font-size: var(--fs-eyebrow);
+        color: var(--ink-muted);
+        text-align: center;
+        letter-spacing: 0.04em;
+      }
+
+      .content {
+        padding: clamp(2.5rem, 6vw, 5rem) clamp(1.25rem, 5vw, 5rem)
+          clamp(2.5rem, 6vw, 5rem);
+        position: relative;
+      }
+
+      .content__head {
+        position: absolute;
+        top: clamp(1rem, 3vw, 2rem);
+        right: clamp(1rem, 3vw, 2rem);
+      }
+
+      .content__body {
+        max-width: var(--gallery-max);
+      }
+
+      .intro {
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        background: var(--bg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 1;
+        transition: opacity 500ms cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .intro.is-hidden {
+        opacity: 0;
+        pointer-events: none;
+      }
+      .intro__img {
+        position: absolute;
+        max-width: min(30vw, 230px);
+        max-height: min(35vh, 260px);
+        width: auto;
+        height: auto;
+        opacity: 0;
+        object-fit: contain;
+      }
+      .intro__img.is-active {
+        opacity: 1;
+      }
+
+      .intro__final {
+        position: absolute;
+        max-width: min(30vw, 230px);
+        max-height: min(35vh, 260px);
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        opacity: 0;
+      }
+      .intro__final.is-active {
+        opacity: 1;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .intro {
+          display: none;
+        }
+      }
+    </style>
+
+    <script is:inline>
+      (function () {
+        var overlay = document.getElementById('intro');
+        if (!overlay) return;
+
+        var remove = function () {
+          if (overlay.parentNode) overlay.parentNode.removeChild(overlay);
+        };
+
+        if (
+          window.matchMedia &&
+          window.matchMedia('(prefers-reduced-motion: reduce)').matches
+        ) {
+          remove();
+          return;
+        }
+
+        var imgs = overlay.querySelectorAll('.intro__img');
+        var finalImg = overlay.querySelector('.intro__final');
+        var stepMs = Math.floor(1600 / imgs.length);
+        var dwellMs = Math.round(650 * 1.1);
+        var fadeMs = 500;
+        var i = 0;
+
+        var tick = setInterval(function () {
+          imgs[i].classList.remove('is-active');
+          i += 1;
+          if (i >= imgs.length) {
+            clearInterval(tick);
+            if (finalImg) finalImg.classList.add('is-active');
+            setTimeout(function () {
+              overlay.classList.add('is-hidden');
+              setTimeout(remove, fadeMs);
+            }, dwellMs);
+          } else {
+            imgs[i].classList.add('is-active');
+          }
+        }, stepMs);
+      })();
+    </script>
+  </body>
+</html>

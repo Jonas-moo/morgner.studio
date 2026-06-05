@@ -1,0 +1,21 @@
+---
+const name = 'Jonas C. Morgner';
+---
+
+<p class="wordmark" aria-label={name}>{name}</p>
+
+<style>
+  .wordmark {
+    margin: 0;
+    font-size: var(--fs-wordmark);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    line-height: 1;
+    color: var(--ink);
+    user-select: none;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+    white-space: nowrap;
+  }
+</style>

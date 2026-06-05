@@ -1,0 +1,61 @@
+---
+import Shell from '../layouts/Shell.astro';
+---
+
+<Shell title="Contact — Jonas C. Morgner" current="contact">
+  <p class="eyebrow contact-eyebrow">Contact</p>
+
+  <h1 class="h1">For enquiries, commissions and exhibitions.</h1>
+
+  <hr class="rule" />
+
+  <dl class="meta">
+    <div class="meta__cell">
+      <dt>Email</dt>
+      <dd><a href="mailto:studio@morgner.art">studio@morgner.art</a></dd>
+    </div>
+    <div class="meta__cell">
+      <dt>Studio</dt>
+      <dd>Berlin, Germany</dd>
+    </div>
+    <div class="meta__cell">
+      <dt>Instagram</dt>
+      <dd>
+        <a href="https://instagram.com/jonas.morgner" rel="noopener">@jonas.morgner</a>
+      </dd>
+    </div>
+  </dl>
+</Shell>
+
+<style>
+  .contact-eyebrow {
+    margin-bottom: var(--s-6);
+  }
+  .h1 {
+    max-width: 640px;
+    margin-bottom: var(--s-3);
+  }
+  .meta {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--s-3);
+    max-width: var(--content-max);
+    margin: 0;
+  }
+  .meta__cell {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+  .meta dt {
+    font-size: var(--fs-eyebrow);
+    color: var(--ink-muted);
+    font-weight: 400;
+  }
+  .meta dd {
+    margin: 0;
+    font-size: var(--fs-nav);
+    font-weight: 500;
+    color: var(--ink);
+  }
+</style>

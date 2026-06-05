@@ -1,0 +1,36 @@
+:root {
+  --bg: #f4f1ec;
+  --bg-tile: #ece8df;
+  --ink: #141414;
+  --ink-muted: #6b6b6b;
+  --rule: #1a1a1a;
+  --rail-divider: #d8d4cc;
+
+  --s-1: 0.5rem;
+  --s-2: 1rem;
+  --s-3: 1.5rem;
+  --s-4: 2rem;
+  --s-6: 3rem;
+  --s-8: 5rem;
+
+  --content-max: 780px;
+  --gallery-max: 880px;
+
+  --font-mono:
+    'JetBrains Mono Variable', ui-monospace, 'SF Mono', Menlo, Consolas,
+    monospace;
+
+  --fs-wordmark: 2rem;
+  --fs-h1: 1.625rem;
+  --fs-artwork-title: 1.25rem;
+  --fs-body: 0.875rem;
+  --fs-nav: 0.8125rem;
+  --fs-eyebrow: 0.75rem;
+  --fs-tile-label: 0.6875rem;
+
+  --lh-body: 1.7;
+  --lh-h1: 1.35;
+
+  --rail-w: clamp(45px, 17.6vw, 192px);
+  --bp-tablet: 900px;
+}
