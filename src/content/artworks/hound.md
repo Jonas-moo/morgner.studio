@@ -1,10 +1,10 @@
 ---
 title: 'Hound'
 year: 2026
-medium: 'acrylic on canvas'
-dimensions: 'dimensions on request'
+medium: 'Acrylic on canvas'
+dimensions: '20 x 10 cm'
 image: '/artworks/hound.png'
-order: 16
+order: 17
 forSale: false
 ---
 

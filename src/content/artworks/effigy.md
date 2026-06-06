@@ -1,10 +1,10 @@
 ---
 title: 'Effigy'
 year: 2026
-medium: 'acrylic on canvas'
-dimensions: 'dimensions on request'
+medium: 'Acrylic on canvas'
+dimensions: '20 x 100 cm'
 image: '/artworks/effigy.png'
-order: 13
+order: 14
 forSale: false
 ---
 

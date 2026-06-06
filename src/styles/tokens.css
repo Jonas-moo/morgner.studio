@@ -20,7 +20,7 @@
     'JetBrains Mono Variable', ui-monospace, 'SF Mono', Menlo, Consolas,
     monospace;
 
-  --fs-wordmark: 2rem;
+  --fs-wordmark: clamp(2rem, 1.4rem + 1.5vw, 3rem);
   --fs-h1: 1.625rem;
   --fs-artwork-title: 1.25rem;
   --fs-body: 0.875rem;

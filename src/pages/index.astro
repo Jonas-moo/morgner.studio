@@ -1,50 +1,104 @@
 ---
-import { getCollection } from 'astro:content';
 import Shell from '../layouts/Shell.astro';
-import ArtworkCard from '../components/ArtworkCard.astro';
-
-const artworks = (await getCollection('artworks')).sort(
-  (a, b) => a.data.order - b.data.order
-);
 ---
 
-<Shell title="Jonas C. Morgner — Gallery" current="gallery">
-  <p class="eyebrow gallery-eyebrow">Gallery</p>
+<Shell title="Jonas C. Morgner" current="about" intro>
+  <p class="eyebrow about-eyebrow">About</p>
 
-  <ul class="grid">
-    {
-      artworks.map((artwork) => (
-        <li class="grid__item">
-          <ArtworkCard artwork={artwork} />
-        </li>
-      ))
-    }
-  </ul>
+  <h1 class="h1">
+    Painting helps me stay close to the version of myself that feels most true.
+  </h1>
+
+  <div class="about-grid">
+    <figure class="about-portrait">
+      <img src="/about/portrait.png" alt="Portrait of Jonas C. Morgner" />
+    </figure>
+
+    <div class="prose">
+      <p>
+        Jonas C. Morgner (b. 2001, K&uuml;rten) is a Berlin-based painter
+        working with acrylic on canvas.
+      </p>
+      <p>
+        His abstract paintings are playful, intuitive, and layered &mdash;
+        guided by color, curiosity, and a desire to reconnect with his
+        authentic self. Working spontaneously and in the moment, Morgner
+        treats painting as a way of becoming more honest, present, and
+        instinctive.
+      </p>
+    </div>
+  </div>
+
+  <hr class="rule" />
+
+  <dl class="meta">
+    <div class="meta__cell">
+      <dt>Studio</dt>
+      <dd>Berlin, GER</dd>
+    </div>
+  </dl>
 </Shell>
 
 <style>
-  .gallery-eyebrow {
+  .about-eyebrow {
     margin-bottom: var(--s-6);
   }
 
-  .grid {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  .h1 {
+    max-width: 640px;
+    margin-bottom: var(--s-4);
+  }
+
+  .about-grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 4rem 2.5rem;
+    grid-template-columns: minmax(110px, 160px) minmax(0, 1fr);
+    gap: var(--s-6);
+    align-items: start;
     max-width: var(--gallery-max);
   }
 
-  .grid__item {
-    margin: 0;
+  .prose {
+    min-width: 0;
+    max-width: var(--content-max);
   }
 
-  @media (max-width: 540px) {
-    .grid {
+  .about-portrait {
+    margin: 0;
+  }
+  .about-portrait img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .meta {
+    margin: 0;
+    max-width: var(--content-max);
+  }
+  .meta__cell {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+  .meta dt {
+    font-size: var(--fs-eyebrow);
+    color: var(--ink-muted);
+    font-weight: 400;
+  }
+  .meta dd {
+    margin: 0;
+    font-size: var(--fs-nav);
+    font-weight: 500;
+    color: var(--ink);
+  }
+
+  @media (max-width: 720px) {
+    .about-grid {
       grid-template-columns: 1fr;
-      gap: 3rem;
+      gap: var(--s-4);
+    }
+    .about-portrait {
+      max-width: 280px;
     }
   }
 </style>

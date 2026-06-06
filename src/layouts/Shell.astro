@@ -51,7 +51,15 @@ const {
         <div class="rail__mark">
           <Wordmark />
         </div>
-        <p class="rail__caption">Berlin</p>
+        <a
+          class="rail__ig"
+          href="https://instagram.com/jonas.morgner"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Instagram (opens in new tab)"
+        >
+          @
+        </a>
       </aside>
 
       <main class="content" id="main">
@@ -90,12 +98,17 @@ const {
         justify-content: center;
       }
 
-      .rail__caption {
-        margin: 0;
+      .rail__ig {
         font-size: var(--fs-eyebrow);
+        font-weight: 500;
+        letter-spacing: 0.08em;
         color: var(--ink-muted);
-        text-align: center;
-        letter-spacing: 0.04em;
+        text-decoration: none;
+        text-transform: uppercase;
+      }
+      .rail__ig:hover {
+        color: var(--ink);
+        opacity: 1;
       }
 
       .content {

@@ -1,8 +1,8 @@
 ---
 title: 'Submersion'
 year: 2024
-medium: 'acrylic on canvas'
-dimensions: '70cm x 100cm'
+medium: 'Acrylic on canvas'
+dimensions: '100 x 140 cm'
 image: '/artworks/submersion.png'
 order: 4
 forSale: false

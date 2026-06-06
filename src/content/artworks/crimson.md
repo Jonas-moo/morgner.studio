@@ -1,8 +1,8 @@
 ---
 title: 'Crimson'
 year: 2025
-medium: 'acrylic on canvas'
-dimensions: '80cm x 120cm'
+medium: 'Acrylic on canvas'
+dimensions: '80 x 100 cm'
 image: '/artworks/crimson.png'
 order: 7
 forSale: false

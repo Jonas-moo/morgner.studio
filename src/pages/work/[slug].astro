@@ -17,7 +17,6 @@ interface Props {
 const { artwork } = Astro.props;
 const {
   title,
-  year,
   medium,
   dimensions,
   image,
@@ -37,10 +36,12 @@ const priceLabel =
         maximumFractionDigits: 0,
       }).format(price)
     : null;
+
+const inquiryHref = `mailto:info.jonas.morgner@gmail.com?subject=${encodeURIComponent(title)}`;
 ---
 
 <Shell title={`${title} — Jonas C. Morgner`} current="gallery">
-  <p class="back"><a href="/">&larr; BACK</a></p>
+  <p class="back"><a href="/gallery">&larr; BACK</a></p>
 
   <article class="work">
     <div class="work__image">
@@ -52,7 +53,7 @@ const priceLabel =
         <span class="work__title-mark">{title}</span>
         {sold && <span class="sold-dot" role="img" aria-label="Sold" />}
       </h1>
-      <p class="work__line">{year} &mdash; {medium}</p>
+      <p class="work__line">{medium}</p>
       <p class="work__line">{dimensions}</p>
 
       {
@@ -66,6 +67,12 @@ const priceLabel =
       <div class="work__notes">
         <Content />
       </div>
+
+      {
+        !sold && (
+          <a class="inquire" href={inquiryHref}>Inquire</a>
+        )
+      }
     </aside>
   </article>
 </Shell>
@@ -166,5 +173,20 @@ const priceLabel =
     border-radius: 50%;
     background: #c0392b;
     vertical-align: middle;
+  }
+
+  .inquire {
+    display: inline-block;
+    margin-top: var(--s-3);
+    font-size: var(--fs-nav);
+    color: var(--ink-muted);
+    text-decoration: underline;
+    text-underline-offset: 0.25em;
+    transition: color 160ms ease;
+  }
+  .inquire:hover,
+  .inquire:focus-visible {
+    color: var(--ink);
+    opacity: 1;
   }
 </style>

@@ -1,10 +1,10 @@
 ---
 title: 'Saffron'
 year: 2026
-medium: 'acrylic on canvas'
-dimensions: 'dimensions on request'
+medium: 'Acrylic on canvas'
+dimensions: '10 x 20 cm'
 image: '/artworks/saffron.png'
-order: 15
+order: 16
 forSale: false
 ---
 

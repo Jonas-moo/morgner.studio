@@ -1,8 +1,8 @@
 ---
 title: 'Constellation'
 year: 2026
-medium: 'acrylic on canvas'
-dimensions: 'dimensions on request'
+medium: 'Acrylic on canvas'
+dimensions: '120 x 100 cm'
 image: '/artworks/constellation.png'
 order: 3
 forSale: false

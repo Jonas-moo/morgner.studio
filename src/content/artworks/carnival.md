@@ -1,8 +1,8 @@
 ---
 title: 'Carnival'
 year: 2025
-medium: 'acrylic on canvas'
-dimensions: '120cm x 100cm'
+medium: 'Acrylic on canvas'
+dimensions: '120 x 100 cm'
 image: '/artworks/carnival.png'
 order: 5
 forSale: false

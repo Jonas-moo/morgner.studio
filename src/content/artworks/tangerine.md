@@ -1,8 +1,8 @@
 ---
 title: 'Tangerine'
 year: 2026
-medium: 'acrylic on canvas'
-dimensions: 'dimensions on request'
+medium: 'Acrylic on canvas'
+dimensions: '90 x 120 cm'
 image: '/artworks/tangerine.png'
 order: 11
 forSale: false

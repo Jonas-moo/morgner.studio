@@ -1,8 +1,8 @@
 ---
 title: 'Pillars'
 year: 2024
-medium: 'acrylic on canvas'
-dimensions: '80cm x 120cm'
+medium: 'Acrylic on canvas'
+dimensions: '60 x 90 cm'
 image: '/artworks/pillars.png'
 order: 8
 forSale: false

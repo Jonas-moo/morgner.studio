@@ -1,8 +1,8 @@
 ---
 title: 'Cobalt'
 year: 2026
-medium: 'acrylic on canvas'
-dimensions: 'dimensions on request'
+medium: 'Acrylic on canvas'
+dimensions: '60 x 90 cm'
 image: '/artworks/cobalt.png'
 order: 9
 forSale: false

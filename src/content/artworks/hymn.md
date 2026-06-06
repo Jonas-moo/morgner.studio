@@ -1,8 +1,8 @@
 ---
 title: 'Hymn'
 year: 2026
-medium: 'acrylic on canvas'
-dimensions: 'dimensions on request'
+medium: 'Acrylic on canvas'
+dimensions: '100 x 160 cm'
 image: '/artworks/hymn.png'
 order: 1
 forSale: false

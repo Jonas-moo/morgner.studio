@@ -1,10 +1,10 @@
 ---
 title: 'Vespers'
 year: 2026
-medium: 'acrylic on canvas'
-dimensions: 'dimensions on request'
+medium: 'Acrylic on canvas'
+dimensions: '30 x 30 cm'
 image: '/artworks/vespers.png'
-order: 14
+order: 15
 forSale: false
 ---
 

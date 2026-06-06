@@ -1,8 +1,8 @@
 ---
 title: 'Verdigris'
 year: 2026
-medium: 'acrylic on canvas'
-dimensions: 'dimensions on request'
+medium: 'Acrylic on canvas'
+dimensions: '60 x 100 cm'
 image: '/artworks/verdigris.png'
 order: 10
 forSale: false
