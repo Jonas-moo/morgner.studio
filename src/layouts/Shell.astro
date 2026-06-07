@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import Wordmark from '../components/Wordmark.astro';
 import Nav from '../components/Nav.astro';
+import Analytics from '@vercel/analytics/astro';
 
 interface Props {
   title?: string;
@@ -215,5 +216,7 @@ const {
         }, stepMs);
       })();
     </script>
+
+    <Analytics />
   </body>
 </html>
