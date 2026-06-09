@@ -11,10 +11,9 @@
     x="16"
     y="16"
     font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace"
-    font-size="18"
+    font-size="24"
     font-weight="700"
     fill="#141414"
     text-anchor="middle"
-    dominant-baseline="central"
-    letter-spacing="-0.6">JM</text>
+    dominant-baseline="central">M</text>
 </svg>
