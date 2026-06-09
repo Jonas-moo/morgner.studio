@@ -1,6 +1,20 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <rect width="32" height="32" fill="#f4f1ec"/>
-  <rect x="6" y="8" width="20" height="2" fill="#141414"/>
-  <rect x="6" y="15" width="14" height="2" fill="#141414"/>
-  <rect x="6" y="22" width="20" height="2" fill="#141414"/>
+  <style>
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #141414; }
+      .ink { fill: #f4f1ec; }
+    }
+  </style>
+  <rect class="bg" width="32" height="32" fill="#f4f1ec"/>
+  <text
+    class="ink"
+    x="16"
+    y="16"
+    font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace"
+    font-size="13"
+    font-weight="700"
+    fill="#141414"
+    text-anchor="middle"
+    dominant-baseline="central"
+    letter-spacing="-0.6">JCM</text>
 </svg>
