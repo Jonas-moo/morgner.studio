@@ -54,8 +54,9 @@ const inquiryHref = `mailto:jonas@morgner.studio?subject=${encodeURIComponent(ti
         {sold && <span class="sold-dot" role="img" aria-label="Sold" />}
       </h1>
       <p class="work__line">{medium}</p>
-      <p class="work__line">{dimensions}</p>
-      {priceLabel && <p class="work__line work__price">{priceLabel}</p>}
+      <p class="work__line">
+        {dimensions}{priceLabel && <span class="work__price-sep"> &mdash; {priceLabel}</span>}
+      </p>
 
       {
         forSale && stripePaymentLink && (
@@ -136,11 +137,6 @@ const inquiryHref = `mailto:jonas@morgner.studio?subject=${encodeURIComponent(ti
   }
   .work__line + .work__line {
     margin-top: 0.25rem;
-  }
-  .work__price {
-    color: var(--ink);
-    font-weight: 500;
-    margin-top: 0.65rem;
   }
 
   .work__notes {
