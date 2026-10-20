@@ -6,6 +6,7 @@ dimensions: '120 x 100 cm'
 image: '/artworks/constellation.png'
 order: 3
 forSale: false
+sold: true
 ---
 
 Pinpoints of red across a blue field. Cold and electric.
