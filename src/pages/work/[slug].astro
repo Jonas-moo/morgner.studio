@@ -55,6 +55,7 @@ const inquiryHref = `mailto:jonas@morgner.studio?subject=${encodeURIComponent(ti
       </h1>
       <p class="work__line">{medium}</p>
       <p class="work__line">{dimensions}</p>
+      {priceLabel && <p class="work__line work__price">{priceLabel}</p>}
 
       {
         forSale && stripePaymentLink && (
