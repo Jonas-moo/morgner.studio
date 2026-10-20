@@ -31,6 +31,6 @@
   --lh-body: 1.7;
   --lh-h1: 1.35;
 
-  --rail-w: clamp(48px, 16.5vw, 210px);
+  --rail-w: clamp(36px, 12.375vw, 158px);
   --bp-tablet: 900px;
 }
