@@ -6,6 +6,7 @@ dimensions: '80 x 100 cm'
 image: '/artworks/combustion.png'
 order: 6
 forSale: false
+sold: true
 ---
 
 Throwaway gestures over a deep red. Made in one breath.
