@@ -24,6 +24,20 @@ body {
   font-feature-settings: 'liga' 0, 'calt' 0;
 }
 
+/* Peace-hand cursor (fine pointers only — same idea as keinemusik.com). */
+@media (pointer: fine) {
+  html,
+  body,
+  a,
+  button,
+  [role='button'],
+  label[for],
+  summary,
+  .card {
+    cursor: url('/cursors/peace.png') 8 1, auto;
+  }
+}
+
 img,
 svg {
   display: block;
@@ -53,7 +67,6 @@ button {
   background: none;
   border: 0;
   padding: 0;
-  cursor: pointer;
 }
 
 ::selection {
