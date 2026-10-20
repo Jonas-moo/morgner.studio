@@ -2,7 +2,7 @@
 title: 'Thicket'
 year: 2026
 medium: 'Acrylic on canvas'
-dimensions: '80 x 100 cm'
+dimensions: '100 x 120 cm'
 image: '/artworks/thicket.jpg'
 order: -1
 forSale: false
