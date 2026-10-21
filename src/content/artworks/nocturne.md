@@ -6,6 +6,7 @@ dimensions: '100 x 120 cm'
 image: '/artworks/nocturne.png'
 order: 2
 forSale: false
+sold: true
 ---
 
 Scattered light against a black field. Built in a single late-night sitting and left untouched.
